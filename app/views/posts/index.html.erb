@@ -1,15 +1,16 @@
 <div class="columns">
   <div class="column">
-    <h1 class="title">Posts</h1>
+    <p class="title is-1">Posts</p>
 
     <% @posts.each do |post| %>
       <div class="content">
-        <h2 class="subtitle"><%= link_to post.title, post %></h2><br>
+        <p class="title is-2"><%= link_to post.title, post %></p>
+        <% if user_signed_in? %>
+          <p class="subtitle is-5"><%= post.user.name %></p>
+        <% end %>
       </div>
     <% end %>
 
     <br>
-
-    <%= link_to 'New Post', new_post_path %>
   </div>
 </div>
