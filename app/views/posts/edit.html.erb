@@ -1,5 +1,37 @@
-<h1>Editing Post</h1>
+<div class="columns is-centered mt-1">
+  <div class="column is-one-third">
+    <h1 class="title">Edit Post</h1>
+    <%= simple_form_for(@post) do |f| %>
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-<%= render 'form', post: @post %>
+      <div class="field">
+        <div class="control">
+          <%= f.input :title, label: "Title",
+                      input_html: { class: "input"},
+                      label_html: {class: "label"},
+                      wrapper: false, autofocus: true %>
+        </div>
+      </div>
 
-<%= link_to 'Back', @post %>
+      <div class="field">
+        <div class="control">
+          <%= f.input :body, label: "Body",
+                      input_html: { class: "input textarea"},
+                      label_html: {class: "label"}, wrapper: false %>
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <%= f.button :submit, class: 'button is-primary' %>
+        </div>
+        <div class="control">
+          <%= link_to 'Cancel', @post, class: 'button is-light' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+

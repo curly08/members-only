@@ -4,22 +4,27 @@
 
   <div class="field">
     <div class="control">
-      <%= f.input :title, label: "Title", input_html: { class: "input"}, label_html: {class: "label"}, wrapper: false, autofocus: true %>
+      <%= f.input :title, label: "Title",
+                  input_html: { class: "input"},
+                  label_html: {class: "label"},
+                  wrapper: false, autofocus: true %>
     </div>
   </div>
 
   <div class="field">
     <div class="control">
-      <%= f.input :body, label: "Body", input_html: { class: "input textarea"}, label_html: {class: "label"}, wrapper: false %>
+      <%= f.input :body, label: "Body",
+                  input_html: { class: "input textarea"},
+                  label_html: {class: "label"}, wrapper: false %>
     </div>
   </div>
 
   <div class="field is-grouped">
     <div class="control">
-      <%= f.button :submit, class: 'button is-link is-primary' %>
+      <%= f.button :submit, class: 'button is-primary' %>
     </div>
     <div class="control">
-      <%= link_to 'Cancel', posts_path, class: 'button is-link is-danger' %>
+      <%= link_to 'Cancel', posts_path, class: 'button is-light' %>
     </div>
   </div>
 <% end %>
