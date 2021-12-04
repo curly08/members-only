@@ -1,24 +1,14 @@
 <div class="columns is-centered mt-1">
   <div class="column is-one-third">
-    <% if user_signed_in? %>
-      <h1 class="title is-1">Posts</h1>
+    <h1 class="title is-1">Posts</h1>
 
-      <% @posts.each do |post| %>
-        <div class="content is-spaced">
-          <h2 class="title is-2"><%= link_to post.title, post %></h2>
-          <% if user_signed_in? %>
-            <h3 class="subtitle is-4"><%= post.user.username %></h3>
-          <% end %>
-        </div>
-      <% end %>
-    <% else%>
-      <p class="title is-1">Log In To Read These Posts</p>
-
-      <% @posts.each do |post| %>
-        <div class="content is-spaced">
-          <p class="title is-2 has-text-link"><%= post.title %></p>
-        </div>
-      <% end %>
+    <% @posts.each do |post| %>
+      <div class="content is-spaced">
+        <h2 class="title is-2"><%= link_to post.title, post %></h2>
+        <% if user_signed_in? %>
+          <h3 class="subtitle is-4"><%= post.user.username %></h3>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
