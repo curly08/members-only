@@ -1,5 +1,5 @@
-<div class="columns is-centered mt-1">
-  <div class="column is-one-third">
+<div class="columns is-centered mx-1 my-1">
+  <div class="column is-half">
     <p class='title'>Log In</p>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -37,6 +37,9 @@
         </div>
         <div class="control">
           <%= link_to "Cancel", posts_path, class: 'button is-light' %>
+        </div>
+        <div class="control" style="margin-left: auto;">
+          <%= link_to "Sign Up", new_user_registration_path, class: "button is-info" %>
         </div>
       </div>
     <% end %>
